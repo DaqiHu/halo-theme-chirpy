@@ -45,17 +45,12 @@ let buildCodeTable = (len, codeElement) => {
   table.classList.add('rouge-table');
   let tbody = document.createElement('tbody');
   let tr = document.createElement('tr');
-  let lineNumTd = document.createElement('td');
-  lineNumTd.classList.add('rouge-gutter', 'gl');
   let codeTd = document.createElement('td');
   codeTd.classList.add('rouge-code');
   let codePre = document.createElement('pre');
 
   codePre.innerHTML = codeElement.innerHTML;
   codeElement.innerHTML = '';
-
-  lineNumTd.appendChild(buildLineNum(len));
-  tr.appendChild(lineNumTd);
 
   codeTd.appendChild(codePre);
   tr.appendChild(codeTd);
